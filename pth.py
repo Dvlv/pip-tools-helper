@@ -113,7 +113,7 @@ def install(arguments):
             filepath = f"{reqs_file_path}requirements-{env}.in"
             if not os.path.exists(filepath):
                 with open(filepath, "w") as f:
-                    f.write("-c requirements.txt")
+                    f.write("-c requirements.txt\n")
 
             add_reqs_to_file(filepath, arguments[1:])
             os.system(f"pip-compile {filepath}")
